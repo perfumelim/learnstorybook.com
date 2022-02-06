@@ -10,6 +10,8 @@ commit: 'f9a12b8'
 
 <br/>
 
+//아래 한 문단은 의역했습니다.
+
 UI 테스트는 까다롭다. 사용자는 새로운 기능이 자주 출시되기를 기대한다. 하지만 새로운 기능이 출시된다는 건 이전보다 더 많은 양의 UI와 state를 테스트해야 한다는 뜻이다. 모든 테스팅 도구는 "쉽고, 신뢰할 수 있으며, 빠를 것" 을 보장하지만, 그 어려움에 대해서는 가볍게 넘어간다.
 
 선두적인 프론트엔드 팀을 어떻게 따라갈 수 있을까? 그들은 대체 어떤 테스트 전략과 메소드를 사용할까? 우리는 스토리북 커뮤니티에서 10팀을 골라 - wilio, Adobe, Peloton, Shopify 등 - 그들을 조사해보았다.
@@ -67,17 +69,15 @@ UI에서 테스트가 필요한 다양한 측면을 다루었지만, 이를 워�
 
 ![](/ui-testing-handbook/ui-testing-workflow.png)
 
-## Let's get testing
+## 테스트를 시작해보자.
 
-In upcoming chapters, we'll dig deeper into each layer of the test stack and get into the mechanics implementing this testing strategy. But first, we’re going to need something to test. I’ll be using the Taskbox app as an example. It’s a task management app similar to Asana.
-
-다음 장에서 우리는 테스트 스택의 각 계층에 대해 더 깊이 파고들어 이 테스트 전략을 구현하는 메커니즘에 대해 알아볼 것이다. 하지만 먼저 테스트해볼 무언가가 필요하다. Taskbox 앱을 예시로 사용하겠다. Asana와 비슷한 작업 관리 앱이다.
+다음 장에서 우리는 테스트 스택의 각 계층에 대해 더 깊이 파고들어 이 테스트 전략을 구현하는 메커니즘에 대해 알아볼 것이다. 하지만 먼저 테스트해볼 무언가가 필요하다. Taskbox 앱을 예시로 사용하겠다. Taskbox는 Asana와 비슷한 작업 관리 앱이다.
 
 ![](/ui-testing-handbook/taskbox.png)
 
 UI를 테스트하는 방법에 집중하고 있으므로, 구현의 세부 정보는 중요하지 않다. 또한 여기서 React를 사용했지만, 이러한 테스트 개념은 모든 컴포넌트 기반 프레임워크로 확장될 수 있다.
 
-코드를 직접 보고 싶다면 이 repository https://github.com/chromaui/ui-testing-guide-code 를 fork한 다음, 아래의 커맨드를 따라하면 된다.
+코드를 직접 보고 싶다면 이 저장소 https://github.com/chromaui/ui-testing-guide-code 를 fork한 다음, 아래의 커맨드를 따라하면 된다.
 
 ```sh
 # Clone the forked repository
