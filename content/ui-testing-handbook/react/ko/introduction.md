@@ -62,12 +62,12 @@ UI에서 테스트가 필요한 다양한 측면을 다루었지만, 이를 실�
 
 우리가 조사한 팀들은 팀의 규모와 기술 스택이 각기 달랐음에도 불구하고 비슷한 전략을 가지고 있었습니다. 그 내용을 취합해 효율적인 작업 흐름을 만들면 다음과 같습니다: 
 
-- 📚 [Storybook](http://storybook.js.org/)을 이용한 **컴포넌트 분리.** . Write test cases where each state is reproduced using props and mock data.
-- ✅ [Chromatic](https://www.chromatic.com/)을 이용한 **시각적 버그 포착 및 구성 확인.** 
-- 🐙 [Jest](https://jestjs.io/)와 [Testing Library](https://testing-library.com/)를 이용한 **인터렉션 검증.**
-- ♿️ [Axe](https://www.deque.com/axe/)를 이용한 **접근성 심사.**
-- 🔄 [Cypress](https://www.cypress.io/)를 이용해 e2e 테스트 코드를 작성하여 **사용자 흐름 검증.**
-- 🚥 [GitHub Actions](https://github.com/features/actions)을 통해 자동으로 테스트를 실행해 **회귀 포착.**
+- 📚 [Storybook](http://storybook.js.org/)을 이용한 **컴포넌트 분리**. props와 mock 데이터를 사용하여 각 state를 재현하는 테스트 케이스를 작성합니다.
+- ✅ [Chromatic](https://www.chromatic.com/)을 이용한 **시각적 버그 포착 및 구성 확인**. 
+- 🐙 [Jest](https://jestjs.io/)와 [Testing Library](https://testing-library.com/)를 이용한 **인터렉션 검증**.
+- ♿️ [Axe](https://www.deque.com/axe/)를 이용한 **접근성 심사**.
+- 🔄 [Cypress](https://www.cypress.io/)를 이용해 e2e 테스트 코드를 작성하여 **사용자 흐름 검증**.
+- 🚥 [GitHub Actions](https://github.com/features/actions)을 통해 자동으로 테스트를 실행해 **회귀 포착**.
 
 ![](/ui-testing-handbook/ui-testing-workflow.png)
 
