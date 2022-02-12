@@ -52,7 +52,7 @@ commit: '1421db5'
 
 <!-- The first challenge is just to verify the component's appearance in all these scenarios. That requires a lot of fiddling with props & state to set up and test each case. Oh, and computers can’t really tell you if it matches the spec or not. You, _the developer,_ have to visually inspect it. -->
 
-첫 번째 과제는 예측 가능한 모든 시나리오에서 컴포넌트의 모양새를 확인하는 것입니다. 각 사례를 설정하고 테스트하기 위해서는 props와 state를 많이 손봐야 합니다. 컴퓨터는 우리의 의도와 화면이 일치하는지 잘 알지 못합니다. 유감스럽지만 개발자가 육안으로 직접 검사해야 합니다.  
+첫 번째 과제는 예측 가능한 모든 시나리오에서 컴포넌트의 모양새를 확인하는 것입니다. 각 사례를 설정하고 테스트하기 위해서는 props와 state를 많이 손봐야 합니다. 컴퓨터는 명세와 실제 화면이 일치하는지 잘 알지 못합니다. 유감스럽지만 개발자가 육안으로 직접 검사해야 합니다.  
 
 <!-- ### 2. Does it <i>still</i> look right? -->
 
@@ -112,7 +112,7 @@ Let's go through each step in detail. -->
 
 <!-- Storybook is the industry-standard for building components in isolation. It’s used by Twitter, Slack, Airbnb, Shopify, Stripe, and Microsoft. It is packaged as a small standalone tool that lives alongside your app, giving you: -->
 
-Storybook은 컴포넌트를 개별적으로 빌드하기 위한 업계 표준입니다. Twitter, Slack, Airbnb, Shopify, Stripe 및 Microsoft에서 사용합니다. 앱과 함께 제공되는 작은 독립 실행형 도구로 패키지되어 다음을 제공합니다.
+Storybook은 컴포넌트를 개별적으로 빌드하기 위한 업계 표준입니다. Twitter, Slack, Airbnb, Shopify, Stripe 및 Microsoft에서 사용합니다. Storybook은 작은 독립 실행형 도구로 패키지되어 앱과 함께 제공되며, 아래와 같은 이점이 있습니다. 
 
 <!-- - 📥 A **sandbox** to render each component in isolation -->
 
@@ -145,7 +145,7 @@ Task component로 다시 돌아가 보겠습니다. "컴포넌트 분리"란 이
 
 <!-- We can start by creating a story file for the Task component. This registers the component with Storybook and adds in one default test case. -->
 
-Task component에 대한 스토리 파일을 만드는 것으로 시작해볼까요. 이렇게 하면 Task component가 Storybook에 등록되고, 하나의 기본 테스트 사례로 추가됩니다.
+Task component에 대한 story 파일을 만드는 것으로 시작해볼까요. 이렇게 하면 Task component가 Storybook에 등록되고, 하나의 기본 테스트 사례로 추가됩니다.
 
 ```javascript:title=src/components/Task.stories.js
 import React from 'react';
@@ -175,7 +175,7 @@ Default.args = {
 
 <!-- And finally, run the following command to start Storybook in development mode. You should see the Task component load up. -->
 
-마지막으로 다음 커맨드를 실행하면 개발 모드에서 Storybook을 시작합니다. Task component가 로드되는 것을 볼 수 있습니다.
+마지막으로 다음 커맨드를 실행해 개발 모드에서 Storybook을 시작합시다. Task component가 로드되는 것을 볼 수 있습니다.
 
 ```
 yarn storybook
@@ -251,7 +251,7 @@ Archived.args = {
 
 <!-- Verification is _you_ evaluating how the component looks in Storybook. That is, does it match the design spec? -->
 
-검증은 컴포넌트가 storybook에서 어떻게 보이는지 개발자가 직접 평가하는 과정입니다. 즉, 디자인 사양과 일치하는지 확인하는 일입니다.
+검증은 컴포넌트가 storybook에서 어떻게 보이는지 개발자가 직접 평가하는 과정입니다. 즉, 디자인 명세와 일치하는지 확인하는 일입니다.
 
 <!-- The usual development workflow is:
 
@@ -297,7 +297,7 @@ LongTitle.args = {
 
 <!-- The Task component looks as we expect it to in all its use cases. But, how do we ensure that a stray line of CSS doesn’t break it in the future? It’s unrealistic to **manually** go through the entire directory of components whenever you make a change. -->
 
-Task 컴포넌트는 모든 사용 사례에서 기대했던 대로 보입니다. 하지만 앞으로도 CSS가 깨지지 않도록 하려면 어떻게 해야 할까요? 무언가를 변경할 때마다 컴포넌트의 전체 디렉터리를 **수동으로** 이동하는 것은 비효율적입니다.
+Task 컴포넌트는 모든 사용 사례에서 기대했던 대로 보입니다. 하지만 앞으로도 쭉 CSS가 깨지지 않도록 하려면 어떻게 해야 할까요? 무언가를 변경할 때마다 컴포넌트의 전체 디렉터리를 **수동으로** 이동하는 것은 비효율적입니다.
 
 <!-- That’s why developers use a visual regression testing tool to automatically check for regressions. Auth0, Twilio, Adobe and Peloton use [Chromatic](http://chromatic.com/) (built by the Storybook team). -->
 
@@ -432,7 +432,7 @@ Task.propTypes = {
 
 <!-- ✅ If the changes are intentional, press accept. The new snapshot will now be set as the baseline. -->
 
-✅ 의도한 변경사항일 경우 Accept를 누르세요. 이제 새 스냅샷이 baseline으로 설정됩니다.
+✅ 의도한 변경사항일 경우 accept를 누르세요. 이제 새 스냅샷이 baseline으로 설정됩니다.
 
 <!-- ❌ If the changes are unintentional, press deny. The build will fail. Fix the code and run Chromatic again. -->
 
@@ -440,7 +440,7 @@ Task.propTypes = {
 
 <!-- In our case, the changes were intentional. Go ahead and click accept for all stories. The whole workflow is illustrated below. -->
 
-우리의 경우 변경 사항은 의도적이었습니다. 모든 story에 대해 Accept를 눌러주세요. 전체 작업 흐름은 아래에 설명되어 있습니다.
+우리의 경우 변경 사항은 의도적이었습니다. 모든 story에 대해 accept를 눌러주세요. 전체 작업 흐름은 아래에 설명되어 있습니다.
 
 ![Build in storybook and run visual tests with Chromatic. If changes look good, then merge your PR.](/ui-testing-handbook/visual-testing-workflow.png)
 
