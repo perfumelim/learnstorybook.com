@@ -297,7 +297,7 @@ LongTitle.args = {
 
 <!-- The Task component looks as we expect it to in all its use cases. But, how do we ensure that a stray line of CSS doesn’t break it in the future? It’s unrealistic to **manually** go through the entire directory of components whenever you make a change. -->
 
-Task 컴포넌트는 모든 사용 사례에서 기대했던 대로 보입니다. 하지만 앞으로도 쭉 CSS가 깨지지 않도록 하려면 어떻게 해야 할까요? 무언가를 변경할 때마다 컴포넌트의 전체 디렉터리를 **수동으로** 이동하는 것은 비효율적입니다.
+Task 컴포넌트는 모든 사용 사례에서 우리가 기대했던 대로 보입니다. 하지만 앞으로도 쭉 CSS가 깨지지 않도록 하려면 어떻게 해야 할까요? 무언가를 변경할 때마다 컴포넌트의 전체 디렉터리를 **수동으로** 이동하는 것은 비효율적입니다.
 
 <!-- That’s why developers use a visual regression testing tool to automatically check for regressions. Auth0, Twilio, Adobe and Peloton use [Chromatic](http://chromatic.com/) (built by the Storybook team). -->
 
@@ -319,7 +319,7 @@ Task 컴포넌트는 모든 사용 사례에서 기대했던 대로 보입니다
 
 <!-- Chromatic is built specifically for Storybook and requires no configuration. Running the command below will trigger it to capture a snapshot of each story (using a cloud browser). -->
 
-Chromatic은 Storybook용으로 특별히 제작되었으며 따로 구성( configuration)할 필요가 없습니다. 아래 커맨드를 실행하면 Chromatic이 클라우드 브라우저를 사용해 각 스토리의 스냅샷을 캡처합니다.
+Chromatic은 Storybook용으로 특별히 제작되었으며 따로 구성( configuration)할 필요가 없습니다. 아래 커맨드를 실행하면 Chromatic이 클라우드 브라우저를 사용해 각 story의 스냅샷을 캡처합니다.
 
 
 ```
