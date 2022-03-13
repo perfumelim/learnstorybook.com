@@ -1,6 +1,6 @@
 ---
-title: 'Storybook의 비주얼테스트'
-tocTitle: '비주얼'
+title: 'Storybook의 시각적 테스트'
+tocTitle: '시각적 테스트'
 description: 'UI 버그를 자동으로 찾아내는 방법 알아보기'
 commit: '1421db5'
 ---
@@ -11,15 +11,15 @@ commit: '1421db5'
 
 <!-- Visual testing catches bugs by capturing and comparing image snapshots in a real browser. It allows you to automate the process of checking if your UI looks right. -->
 
-비주얼 테스트는 실제 브라우저에서 이미지 스냅샷을 캡처하고 비교해서 버그를 잡습니다. 이를 통해 UI가 제대로 보이는지 확인하는 과정을 자동화할 수 있습니다.
+시각적 테스트는 실제 브라우저에서 이미지 스냅샷을 캡처하고 비교해서 버그를 잡습니다. 이를 통해 UI가 제대로 보이는지 확인하는 과정을 자동화할 수 있습니다.
 
 <!-- ## What are visual bugs? -->
 
-## 비주얼 버그란 무엇일까요?
+## 시각적 버그란 무엇일까요?
 
 <!-- Visual bugs are ubiquitous. Cut-off elements. Incorrect colors or font styles. Broken layouts. And missing error states. -->
 
-비주얼 버그는 무척 흔합니다. 잘린 요소, 부적절한 색깔과 폰트, 깨진 레이아웃, 그리고 누락된 state 오류 같은 것들이 모두 비주얼 버그입니다. 
+시각적 버그는 무척 흔합니다. 잘린 요소, 부적절한 색깔과 폰트, 깨진 레이아웃, 그리고 누락된 state 오류 같은 것들이 모두 시각적 버그입니다. 
 
 <!-- Every company is now a software company. That means every company is responsible for maintaining a UI. But if you’re like me, you probably noticed that companies never seem to have enough people monitor every part of their UI all the time. -->
 
@@ -29,7 +29,7 @@ commit: '1421db5'
 
 <!-- Visual bugs are the unintentional errors in your UIs appearance that make it look untrustworthy. They’re the regressions that are easy to eyeball but that common testing methods can’t catch. -->
 
-비주얼 버그는 뜻하지 않게 발생한 오류로 우리가 만든 UI의 신뢰성을 떨어뜨립니다. 이러한 에러는 눈으로 볼 때는 발견하기 쉽지만, 일반적인 테스트 방법으로는 파악할 수 없는 회귀(regression)입니다. 
+시각적 버그는 뜻하지 않게 발생한 오류로 우리가 만든 UI의 신뢰성을 떨어뜨립니다. 이러한 에러는 눈으로 볼 때는 발견하기 쉽지만, 일반적인 테스트 방법으로는 파악할 수 없는 회귀(regression)입니다. 
 
 <!-- Most tests are intended to verify logic, which makes sense: you run a function, get its output and check whether it's correct or not. Computers are great at verifying data. But what about how something looks? -->
 
@@ -68,15 +68,15 @@ commit: '1421db5'
 
 <!-- ## Visual testing -->
 
-## 비주얼 테스트
+## 시각적 테스트
 
 <!-- Visual testing allows you to tackle both these tasks with one unified workflow. It is the process of verifying the appearance of a component as you’re building it. And again as you iterate to ship new features. -->
 
-비주얼테스트를 통해 위의 두 가지 문제를 통합된 하나의 작업 방식으로 모두 해결할 수 있습니다. 바로 컴포넌트를 빌드할 때 그 컴포넌트의 모양새도 확인하는 방식입니다. 그리고 이 과정을 새로운 기능을 도입할 때마다 반복합니다.  
+시각적 테스트를 통해 위의 두 가지 문제를 통합된 하나의 작업 방식으로 모두 해결할 수 있습니다. 바로 컴포넌트를 빌드할 때 그 컴포넌트의 모양새도 확인하는 방식입니다. 그리고 이 과정을 새로운 기능을 도입할 때마다 반복합니다.  
 
 <!-- Here's what the visual testing workflow looks like: -->
 
-비주얼 테스트는 다음과 같은 방식으로 진행됩니다:
+시각적 테스트는 다음과 같은 방식으로 진행됩니다:
 
 <!-- 1.  🏷 **Isolate** components. Use [Storybook](https://storybook.js.org/) to focus on and test one component at a time. -->
 
@@ -98,7 +98,7 @@ commit: '1421db5'
 
 Let's go through each step in detail. -->
 
-비주얼 테스트의 핵심은 앱의 나머지 부분(데이터, 백엔드, API)에서 UI를 분리하는 것입니다. 이를 통해 각 state를 개별적으로 관찰할 수 있습니다. 일부를 수동으로 확인한 뒤 각각의 state를 자동으로 회귀 테스트할 수 있습니다.
+시각적 테스트의 핵심은 앱의 나머지 부분(데이터, 백엔드, API)에서 UI를 분리하는 것입니다. 이를 통해 각 state를 개별적으로 관찰할 수 있습니다. 일부를 수동으로 확인한 뒤 각각의 state를 자동으로 회귀 테스트할 수 있습니다.
 
 각 단계를 자세히 살펴보겠습니다.
 

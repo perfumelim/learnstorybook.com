@@ -20,7 +20,7 @@ commit: '60b8d8f'
 
 <!-- Testing the more complex parts of the UI is tricky. They are created by combining many simpler components and are also wired up to the application state. In this chapter, we'll look at how to isolate and apply visual testing to composite components. Along the way, you'll learn about mocking data and simulating application logic. And ways to test component integration. -->
 
-UI의 복합 컴포넌트를 테스트하는 것은 더욱 까다롭습니다. 복합 컴포넌트는 단순한 컴포넌트 여러 개가 모여 구성되며 애플리케이션의 상태와도 연결됩니다. 이번 챕터에서는 복합 컴포넌트를 분리하고 비주얼 테스트를 적용하는 방법을 살펴보겠습니다. 이 과정에서 목 데이터(mocking data)와 애플리케이션 로직을 시뮬레이션 하는 방법을 배우게 됩니다. 또한 컴포넌트 통합 테스트를 하는 방법에 대해서도 알게될 것입니다. 
+UI의 복합 컴포넌트를 테스트하는 것은 더욱 까다롭습니다. 복합 컴포넌트는 단순한 컴포넌트 여러 개가 모여 구성되며 애플리케이션의 상태와도 연결됩니다. 이번 챕터에서는 복합 컴포넌트를 분리하고 시각적 테스트를 적용하는 방법을 살펴보겠습니다. 이 과정에서 목 데이터(mocking data)와 애플리케이션 로직을 시뮬레이션 하는 방법을 배우게 됩니다. 또한 컴포넌트 통합 테스트를 하는 방법에 대해서도 알게될 것입니다. 
 
 
 
@@ -51,7 +51,7 @@ UI의 복합 컴포넌트를 테스트하는 것은 더욱 까다롭습니다. �
 
 <!-- Visual tests catch bugs by capturing and comparing image snapshots of stories—in a real browser. Which makes them ideal for spotting UI changes and identifying the root cause. Here’s a quick reminder of the process: -->
 
-비주얼 테스트는 실제 브라우저에서 story의 이미지 스냅샷을 캡처하고 비교하여 버그를 포착합니다. 따라서 UI 변경 사항을 파악하고 근본 원인을 알아차리는데 유용합니다. 이전 챕터에서 배웠던 테스트 프로세스를 떠올려봅시다:
+시각적 테스트는 실제 브라우저에서 story의 이미지 스냅샷을 캡처하고 비교하여 버그를 포착합니다. 따라서 UI 변경 사항을 파악하고 근본 원인을 알아차리는데 유용합니다. 이전 챕터에서 배웠던 테스트 프로세스를 떠올려봅시다:
 
 <!-- 1. 🏷 **Isolate** components. Use Storybook to test one component at a time.
 2. ✍🏽 Write out the **test cases**. Each component state is reproduced using props.
@@ -61,11 +61,11 @@ UI의 복합 컴포넌트를 테스트하는 것은 더욱 까다롭습니다. �
 1. 🏷  컴포넌트 **분리**하기. Storybook을 사용해 한 번에 한 컴포넌트씩 테스트합니다.
 2. ✍🏽 **테스트 케이스 작성하기.** 각 state는 props를 통해 재현됩니다.
 3.  🔍 **수동으로 확인하기.** 각 테스트 케이스의 모양을 수동으로 확인합니다.
-4.  📸 비주얼 회귀 테스트를 통해 **UI 버그 자동으로 잡기**  
+4.  📸 시각적 회귀 테스트를 통해 **UI 버그 자동으로 잡기**  
 
 <!-- Composition testing is all about running visual tests on “composite” components higher up in the tree that are made up of several simpler components. That way you can quantify the impact that any change might have on the entire application. And ensure that the system works as a whole. -->
 
-구성 테스트는 몇 가지 간단한 컴포넌트로 구성된 트리의 상위에 있는 "복합" 컴포넌트에 대해 비주얼 테스트를 실행하는 것입니다. 이렇게 하면 변경 사항이 전체 애플리케이션에 미칠 수 있는 영향을 측량할 수 있습니다. 그리고 시스템이 전체적으로 작동하는지 확인합니다.
+구성 테스트는 몇 가지 간단한 컴포넌트로 구성된 트리의 상위에 있는 "복합" 컴포넌트에 대해 시각적 테스트를 실행하는 것입니다. 이렇게 하면 변경 사항이 전체 애플리케이션에 미칠 수 있는 영향을 측량할 수 있습니다. 그리고 시스템이 전체적으로 작동하는지 확인합니다.
 
 <!-- The key difference is that composite components track application state and pass behaviours down the tree. You’ll have to account for those when writing the test cases. -->
 
