@@ -26,11 +26,11 @@ UI의 복합 컴포넌트를 테스트하는 것은 더욱 까다롭습니다. �
 
 <!-- ## Small bugs end up breaking apps -->
 
-## 작은 버그가 앱을 망치는 큰 결함으로 번지다 
+## 작은 버그가 앱 전체를 망칩니다
 
 <!-- Applications are built by plugging components into each other. This means a bug in one element can impact its neighbours. For example, renaming a prop can disrupt data flow from parent to child components. Or incorrect CSS in a UI element often leads to broken layouts. -->
 
-애플리케이션은 컴포넌트를 서로 연결하여 구축됩니다. 그렇기 때문에 엘리먼트 하나의 버그가 그 주변 전체에 영향을 미치기도 합니다. 예를 들어, prop의 이름을 바꾸는 것만으로 부모 컴포넌트에서 자식 컴포넌트로의 데이터 흐름이 중단될 수 있습니다. 혹은 잘못 스타일링된 엘리먼트 하나로 레이아웃 자체가 깨지기도 합니다. 
+애플리케이션은 컴포넌트를 서로 연결하여 구축됩니다. 그렇기 때문에 엘리먼트 하나의 버그 한 개가 그 주변 전체에 영향을 미치기도 합니다. 예를 들어, prop의 이름을 바꾸는 것만으로 부모 컴포넌트에서 자식 컴포넌트로의 데이터 흐름이 중단될 수 있습니다. 혹은 잘못 스타일링된 엘리먼트 하나로 레이아웃 자체가 깨지기도 합니다. 
 
 <!-- ![minor tweaks cause major regressions](/ui-testing-handbook/minor-major-regressions-1.gif) -->
 
@@ -77,11 +77,11 @@ UI의 복합 컴포넌트를 테스트하는 것은 더욱 까다롭습니다. �
 
 <!-- It moves pinned tasks to the top of the list. And has a loading and empty state. We’ll start by writing stories for all these scenarios. -->
 
-북마크를 누르면 해당 일정은 목록의 맨 위로 이동합니다. 로딩중일 때도 있고, 아무런 일정이 없을 때도 있습니다. 이 모든 시나리오에 대한 이야기를 작성하는 것으로 시작해봅시다.
+핀 버튼을 누르면 해당 일정은 목록의 맨 위로 이동합니다. 로딩중일 때도 있고, 아무런 일정이 없을 때도 있습니다. 이 모든 시나리오에 대한 이야기를 작성하는 것으로 시작해봅시다.
 
 <!-- ![Task list has four states: Default, Empty, Loading and Pinned](/ui-testing-handbook/task-list.png) -->
 
-![Task list는 4가지 상태를 가지고 있습니다: 디폴트일 때, 아무것도 없을 때, 로딩중일 때, 북마크 됐을 때](/ui-testing-handbook/task-list.png)
+![Task list는 4가지 상태를 가지고 있습니다: 디폴트일 때, 아무것도 없을 때, 로딩중일 때, 고정됐을 때](/ui-testing-handbook/task-list.png)
 
 <!-- Create a story file, registering the `TaskList` component and add in a story for the default case. -->
 
@@ -138,7 +138,7 @@ Default.args = {
 
 <!-- The event handler args are already defined in the Task stories file, which we can reuse. Similarly, we can also use args from the default story to create the pinned tasks story. -->
 
-이벤트 핸들러 인수는 재사용 가능한 Task story 파일에 이미 정의되어 있습니다. 마찬가지로 기본 story의 args를 사용하여 북마크된 일정에 대한 story를 만들 수도 있습니다.
+이벤트 핸들러 인수는 재사용 가능한 Task story 파일에 이미 정의되어 있습니다. 마찬가지로 기본 story의 args를 사용하여 고정된 일정에 대한 story를 만들 수도 있습니다.
 
 ```javascript:title=src/components/TaskList.stories.js
 import React from 'react';
