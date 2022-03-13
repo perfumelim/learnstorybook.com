@@ -217,7 +217,7 @@ args 구성을 통해 story를 형성하는 것은 아주 강력한 기술입니
 
 <!-- For the InboxScreen, we are going to use [Mock Service Worker (MSW) addon](https://storybook.js.org/addons/msw-storybook-addon/) to intercept requests at the network level and return mocked responses. -->
 
-InboxScreen의 경우, [Mock Service Worker(MSW) 애드온](https://storybook.js.org/addons/msw-storybook-addon/)을 통해 네트워크 수준에서 요청을 가로채고 모의 응답을 반환합니다.
+InboxScreen의 경우, [Mock Service Worker(MSW) 애드온](https://storybook.js.org/addons/msw-storybook-addon/)을 통해 네트워크 레벨에서 요청을 가로채고 모의 응답을 반환합니다.
 
 <!-- Install msw & its storybook addon. -->
 
