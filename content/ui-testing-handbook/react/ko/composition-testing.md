@@ -38,7 +38,7 @@ UI의 복합 컴포넌트를 테스트하는 것은 더욱 까다롭습니다. �
 
 <!-- Consider the Button component from [Storybook’s design system](https://5ccbc373887ca40020446347-oghpnhotjv.chromatic.com/?path=/docs/button--basic). It is used countless times across multiple pages. A bug in `Button` will inadvertently lead to bugs in all those pages. In other words, one failure can compound exponentially. As you move up the component hierarchy towards the level of pages, the impact of these bugs increases. Therefore, we need a way to catch such cascading issues early and figure out the root cause. -->
 
-[Storybook 디자인 시스템](https://5ccbc373887ca40020446347-oghpnhotjv.chromatic.com/?path=/docs/button--basic)의 Button 컴포넌트를 생각해봅시다. 이 컴포넌트는 여러 페이지에서 셀 수 없이 많이 사용됩니다. `Button`의 버그는 곧 버튼이 사용된 모든 페이지의 버그로 이어집니다. 즉, 하나의 실수가 기하급수적인 실수로 번진다는 뜻입니다. 컴포넌트 계층이 페이지 수준으로 올라갈수록 이러한 버그의 영향도 커집니다. 따라서 이런 계단식 문제를 조기에 포착하고 근본 원인을 파악할 수 있는 방법이 필요합니다.
+[Storybook 디자인 시스템](https://5ccbc373887ca40020446347-oghpnhotjv.chromatic.com/?path=/docs/button--basic)의 Button 컴포넌트를 생각해봅시다. 이 컴포넌트는 여러 페이지에서 셀 수 없이 많이 사용됩니다. `Button`의 버그는 곧 버튼이 사용된 모든 페이지의 버그로 이어집니다. 즉, 하나의 실수가 기하급수적인 실수로 번진다는 뜻입니다. 컴포넌트 계층이 페이지 수준으로 올라갈수록 이러한 버그의 영향도 커집니다. 따라서 이런 연속적인 문제를 조기에 포착하고 근본 원인을 파악할 수 있는 방법이 필요합니다.
 
 <!-- ![The same button component is being used across multiple pages of an app](/ui-testing-handbook/design-system-inconsistent-buttons.jpg) -->
 
@@ -61,7 +61,7 @@ UI의 복합 컴포넌트를 테스트하는 것은 더욱 까다롭습니다. �
 1. 🏷  컴포넌트 **분리**하기. Storybook을 사용해 한 번에 한 컴포넌트씩 테스트합니다.
 2. ✍🏽 **테스트 케이스 작성하기.** 각 state는 props를 통해 재현됩니다.
 3.  🔍 **수동으로 확인하기.** 각 테스트 케이스의 모양을 수동으로 확인합니다.
-4.  📸 비주얼 회귀 테스트를 통해 **UI  버그 자동으로 잡기**  
+4.  📸 비주얼 회귀 테스트를 통해 **UI 버그 자동으로 잡기**  
 
 <!-- Composition testing is all about running visual tests on “composite” components higher up in the tree that are made up of several simpler components. That way you can quantify the impact that any change might have on the entire application. And ensure that the system works as a whole. -->
 
@@ -193,7 +193,7 @@ Empty.args = {
 
 <!-- Shaping stories through args composition is a powerful technique. It allows us to write stories without repeating the same data over and over again. And more importantly, it tests component integration. If you rename one of the `Task` component props, that'll lead to failed test cases for `TaskList`. -->
 
-args 구성을 통해 story를 형성하는 것은 아주 강력한 기술입니다. 이를 통해 동일한 데이터를 반복해서 적지 않아도 story를 작성할 수 있습니다. 더욱 놀라운 것은 컴포넌트를 통합적으로 테스트를 할 수 있다는 점입니다. 만약 `Task` 컴포넌트의 prop 중 하나의 이름을 바꾸면, `TaskList`에 대한 테스트 케이스가 실패하게 됩니다.
+args 구성을 통해 story를 형성하는 것은 아주 강력한 기술입니다. 이를 통해 동일한 데이터를 반복해서 적지 않아도 story를 작성할 수 있습니다. 더욱 훌륭한 점은 컴포넌트를 통합적으로 테스트를 할 수 있다는 것입니다. 만약 `Task` 컴포넌트의 prop 중 하나의 이름을 바꾸면, `TaskList`에 대한 테스트 케이스가 실패하게 됩니다.
 
 ![](/ui-testing-handbook/tasklist-stories.gif)
 
@@ -277,7 +277,7 @@ npx msw init public/
 
 <!-- Lastly, restart the `yarn storybook` command. And we’re all set to mock API requests in stories. -->
 
-마지막으로 'yarn storybook' 커맨드를 다시 실행하세요. 자, story의 mock API 요청에 관한 설정이 모두  완료되었습니다.
+마지막으로 'yarn storybook' 커맨드를 다시 실행하세요. 자, story의 mock API 요청에 관한 설정이 모두 완료되었습니다.
 
 <!-- `InboxScreen` calls the `useTasks` hook which in-turn fetches data from the `/tasks` endpoint. We can specify the mock responses using the `msw` parameter. Notice how you can return different responses for each story. -->
 
@@ -363,4 +363,4 @@ TaskList 및 InboxScreen에 대한 story가 포함된 diff가 표시되어야 �
 
 <!-- Next up, we'll go beyond appearance and into testing interactions. When the user checks off a task, how do you ensure that the suitable event was fired and that state updated correctly? -->
 
-다음 챕터에서는 단순한 모양새 뿐만 아니라 인터렉션(interaction)을 테스트할 것입니다. 사용자가 완료한 일정을 체크했을 때, 적절한 이벤트가 발생하고 상태가 올바르게 업데이트되는지 어떻게 확인할 수 있을까요?
+다음 챕터에서는 단순한 모양새 뿐만 아니라 인터랙션(interaction)을 테스트할 것입니다. 사용자가 완료한 일정을 체크했을 때, 적절한 이벤트가 발생하고 상태가 올바르게 업데이트되는지 어떻게 확인할 수 있을까요?
